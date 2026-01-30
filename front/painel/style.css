@@ -1,0 +1,300 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Inter', sans-serif
+}
+
+html{
+    background: #112341;
+}
+
+
+body,html,main{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+main{
+    background-color: #F0F2F5;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+ header{
+    background-color: #fff;
+
+}
+
+#hi-cont{
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;  
+} 
+
+#hi-cont div{  
+    display: flex;
+}
+
+#hi-cont strong{
+    margin: 5px;
+    color: #fff;
+   
+    
+}
+
+#hi-cont div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hi-cont img{
+    width: 30px;
+}
+
+.screens{
+    
+
+}
+
+#space{
+    width: 300px;
+    background-color: #f0f2f500;
+}
+
+
+
+#video-cont{
+    filter: drop-shadow(2px 2px 5px rgba(105, 105, 105, 0.247));
+    background-color: #fff;
+    border-radius: 15px;
+    width: 48%;
+    height: 450px;
+    min-height: 250px;
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0 20px 0;
+}
+#video-cont iframe{
+    border-radius: 15px;
+    width: 95%;
+    height: 78%;
+    
+    border: none;
+}
+#info-video{
+    width: 90%;
+}
+#info-video h1{
+    font-size: 22px;
+    margin: 20px 0 10px 0px
+
+}
+/*lista de video*/
+
+#video-list{
+    margin: 90px 10px 10px 0;
+    position: relative;
+   
+    
+
+}
+
+#list-desc-main{
+  margin: 0 0 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #112341;
+
+}
+
+#video-list-cont{
+    width: 100%;
+    margin: 20px auto 10px auto;
+    height: 87%;
+    overflow-y: scroll;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+   
+}
+
+
+.videos{
+    width: 90%;
+    display: flex;
+    border: 1px solid #0d449637;
+    box-shadow: 2px 3px 5px #0d449637;
+    border-radius: 5px;
+    margin: 2px auto 10px auto;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    transition: .3s;
+    cursor: pointer;
+    height: 75px;
+    background-color: #fff;
+}
+.videos:hover{
+    scale: 1.01;
+    border: 1px solid rgb(87, 169, 235);
+    background-color: #fff;
+
+}
+
+.videos img{
+    width: 100px;
+    border-radius: 10px;
+    margin: 2px;
+}
+.videos h3{
+    font-size: 12px;
+}
+.videos p{
+    font-size: 10px;
+    margin: 5px 0 5px 0;
+    color: #3f3f3f;
+    text-align: center;
+}
+
+.videos div{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.view-btn{
+    margin: 5px;
+    cursor: pointer;
+    background-color: #0d4496;
+    
+    border-radius: 10px;
+    color: #fff;
+    padding: 7px 15px 7px 15px;
+    border: 2px solid #0d4496;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.view-btn:hover{
+    background-color: #fff;
+    color: #0d4496;
+    border: 2px solid #0d4496;
+}
+
+#certificado-btn{
+    width: 90%;
+    margin: auto;
+    padding: 15px 0 15px 0;
+    font-weight: bold;
+}
+
+.certificado-off{
+    background-color: rgb(5, 168, 43);
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    margin: 20px 0 10px 0;
+    filter: grayscale(90%);
+    cursor: not-allowed;
+}
+
+.certificado-on{
+    filter: none;
+    cursor: pointer;
+    background-color: rgb(5, 168, 43);
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    margin: 20px 0 10px 0;
+    transition: .2s;
+}
+.certificado-on:hover{
+    scale: 1.02;
+}
+@media(max-width:1000px){
+ 
+    #hi-cont{
+        flex-direction: row;
+        justify-content: flex-end;
+        
+    }
+
+    #hi-cont div{
+       
+        width: 200px;
+        margin-right: 0px;
+    }
+
+    #hi-cont h2{
+        margin: 5px;
+        font-size: 17px;
+        text-align: center;
+        display: none;
+        width: 100%;
+    }
+
+    #hi-cont p{
+       margin: 0;
+    }
+    #hi-cont strong{
+        
+       
+    }
+    
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
+    #video-cont{
+        margin-top:70px;
+        width: 100%;
+        padding: 30px 5px 50px 5px;
+        height: auto;
+       
+    }
+
+    #list-desc-main{
+        margin-top: 10px;
+    }
+    #video-list{
+        width: 100%;
+        height: 100%;
+        margin-top: 20px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+    .videos{
+        height: 80px;
+        width: 90%;
+    }
+    #video-list-cont{
+       
+        border: 1px solid #f0f3f5;
+        height: 90%;
+    }
+
+    .view-btn{
+        width: 80%;
+        height: 40px;
+    }
+   
+}

@@ -1,0 +1,227 @@
+#support-cont{
+    max-width: 800px;
+    width: 90%;
+    margin-top: 90px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    padding: 0 10px 10px 10px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+#wpp-cont{
+    background-color: #21C063;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 10px;  
+    cursor: pointer;
+    transition: .3s;
+    filter: drop-shadow(2px 5px 4px rgba(105, 105, 105, 0.308));
+    z-index: 10;
+}
+
+#wpp-cont h1{
+    font-size: 20px;
+    margin: 4px;
+    color: #fff;
+
+}
+
+#wpp-cont:hover{
+    background-color: #05602b;
+    transform: translateY(-5px);
+}
+
+#redirect{
+    position: fixed;
+    background-color: rgba(26, 255, 0, 0);
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+#title-cont h1{
+    text-align: left;
+    color: #0d4496;
+    font-size: 20px;
+    margin: 20px;
+}
+
+
+#supports{
+    filter: drop-shadow(2px 5px 4px rgba(105, 105, 105, 0.308));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  
+}
+
+.support-card{
+    background-color: #fff;
+    margin: 10px;
+    width: 170px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: .3s;
+}
+.support-card:hover{
+    transform: translateY(-5px);
+}
+.support-card img{
+    width: 50px;
+}
+.support-card h1{
+    font-size: 16px;
+    
+    color: #0d4496;
+    text-align: center;
+}
+.support-card p{
+    font-size: 13px;
+    color: #000000bb;
+    text-align: center;
+    margin: 10px 0 10px 0;
+    width: 90%;
+}
+.support-card button{
+    font-weight: bold;
+    font-size: 17px;
+    width: 90%;
+    border-radius: 10px;
+    background-color: #0d4496;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    transition: .3s;
+    border: 2px solid #0d4496;
+
+}
+
+.support-card button:hover{
+    background-color: #fff;
+    border: 2px solid #052351;
+    color: #052351;
+    cursor: pointer;
+}
+
+.blackground{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.728);
+    backdrop-filter: blur(20px);
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3;
+    
+}
+
+.black-remove{
+    display: none;
+}
+
+#bug-form{
+    border: 1px;
+    background-color: #fff;
+    height: 230px;
+    max-width: 600px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+#bug-form h1{
+    color: #0d4496;
+    font-size: 17px;
+    padding-bottom: 10px;
+}
+
+#bug-form textarea{
+    padding: 5px;
+    outline: none;
+    width: 90%;
+    margin: 10px;
+    height: 40%;
+    resize: none;
+}
+
+.blackground button{
+    background-color: #0d4496;
+    color: #fff;
+    padding: 5px;
+    border: 2px solid #0d4496;
+    transition: .3s;
+    border-radius: 15px;
+    padding: 5px;
+    width: 60%;
+    height: 50px;
+    margin: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.blackground button:hover{
+    background-color: #fff;
+    color: #0d4496;
+
+}
+
+#close-cont{
+    width: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: right;
+}
+#close-cont p{
+    text-align: center;
+    width: 20px;
+    padding: 7px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#title-mail{
+    width: 90%;
+    padding: 5px;
+    height: 40px;
+    outline: none;
+}
+
+.hidden{
+    display: none;
+}
+@media (max-width:1000px) {
+    #wpp-cont,#redirect{
+        border-radius: 50%;
+        
+    }
+    #support-cont{
+        
+        margin: 10px auto 0 auto;
+    }
+    #wpp-cont h1{
+        display: none;
+    }
+
+    .support-card{
+        width: 70%;
+    }
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="../component/menu.css">
+     <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="insert-menu"></div>
+    <header> <button id="add-aluno">NOVO ALUNO</button></header>
+
+    <main id="alunos-cont">
+        <div class="alunos-list">
+            <div>NOME</div>
+            <div>EMAIL</div>
+            <div>CURSOS</div>
+        </div>
+    </main>
+
+    <div id="cad-aluno-cont">
+        <div id="cad-aluno" class="hidden">
+           
+            <div id="form">
+                 <h1>Cadastrar aluno</h1>
+                <p>Nome do aluno</p>
+                <input type="Nome" placeholder="EX: Luiz Inácio Bolsonaro da silva" id="nome">
+                <p>Email do aluno</p>
+                <input type="email" name="" placeholder="EX: meuemail@exemplo.com" id="email">
+                <p>Senha do aluno</p>
+                <input type="password" placeholder="Senha do aluno" id="senha"> 
+
+               
+              <!--  <select id="curso" name="curso"> 
+                    <option value="html">HTML</option> 
+                    <option value="css">CSS</option> 
+                    <option value="js">JavaScript</option>
+                </select>-->
+
+                </option>
+                <div id="button-cont">
+                    <button id="cadastrar">Cadastrar</button>
+                    <button id="cancelar">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="cursos-user-cont" class="hidden">
+
+        <section>
+            <div>
+                <h1 id="aluno-name">Nome do aluno</h1>
+            </div>
+
+            <div class="cursos-aluno">
+            
+            </div>
+
+            <div class="cad-curso-user">
+                <p>Valor a ser pago</p>
+                <input type="number" placeholder="R$00.00" id="valor-pago">
+
+                <select name="all-curse" id="all-curse">
+                   
+                </select>
+                
+
+            </div>
+            <div class="cont-btn">
+                <button id="voltar">VOLTAR</button>
+                <button id="vincular-btn">VINCULAR</button>
+            </div>
+
+
+            <script src="/domain.js"></script>
+        </section>
+
+       <!--<section>
+        <h1 id="username">Gilbeto Costa</h1>
+            
+            <div id="cursos-user">
+                
+                <h1>Cursos vinculados</h1>
+                <div class="cursos-cont">
+                    
+                    <div class="cursos">
+                        <p>nomedocurso</p> <button class="btn">Remover</button>
+                    </div>
+                    
+                </div>
+            <button class="btn">voltar</button>
+
+            </div>
+  
+
+           <div id="form-vinc">
+                <h1>Vincular um novo curso</h1>
+                
+                <div id="vinc">
+                    <p>Preço do curso</p>
+                    <input type="number" id="preco">
+
+                    <p>Vincular curso</p>
+                    <select name="carros" id="carros">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                    
+                </div>
+                <button class="btn">Vincular</button> 
+
+           </div>
+
+       </section>-->
+
+    </div>
+    <script src="main.js"></script>
+      <script src="../component/auth.js"></script>
+    <script src="../component/menu.js"></script>
+</body>
+</html>

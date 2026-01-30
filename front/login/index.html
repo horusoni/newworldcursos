@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - New World Cursos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Definindo as cores baseadas no seu print */
+        :root {
+            --azul-escuro: #103667; /* Azul do topo/lateral */
+            --azul-botao: #0d47a1;  /* Azul dos botões "Ir a aula" */
+            --fundo: #f0f2f5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--fundo);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* O fundo azul atrás do card */
+        .background-decor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 45vh;
+            background: linear-gradient( 45deg ,var(--azul-escuro), var(--azul-botao)) ;
+            z-index: 1;
+        }
+
+        /* Card de Login */
+        .login-container {
+            position: relative;
+            z-index: 2;
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .header-login {
+            margin-bottom: 30px;
+        }
+
+        .header-login h1 {
+            color: var(--azul-escuro);
+            font-size: 22px;
+            margin-top: 10px;
+        }
+
+        /* Estilo dos Inputs */
+        .input-box {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 14px 15px 14px 45px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-box input:focus {
+            border-color: var(--azul-botao);
+            box-shadow: 0 0 5px rgba(13, 71, 161, 0.2);
+        }
+
+        /* Botão igual ao "Ir a aula" */
+        .btn-entrar {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--azul-botao);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-entrar:hover {
+            background-color: #08367a;
+        }
+
+        .links-auxiliares {
+            margin-top: 20px;
+        }
+
+        .links-auxiliares a {
+            color: var(--azul-escuro);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .links-auxiliares a:hover {
+            text-decoration: underline;
+        }
+
+        /* Logo simulada */
+        .logo-circulo {
+            width: 70px;
+            height: 70px;
+            background: #fff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        #res{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-decor"></div>
+
+    <div class="login-container">
+        <div class="header-login">
+            <div class="logo-circulo"><img src="https://newworld-teste.netlify.app/assets/images/Logo%20Marca%20(1).png"  width="50px"></div>
+            <h1>Acesso ao Aluno</h1>
+        </div>
+
+        
+            <div class="input-box">
+                <i class="fa fa-envelope"></i>
+                <input type="email" placeholder="Seu e-mail" id="email" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-lock"></i>
+                <input type="password" placeholder="Sua senha" id="senha" required>
+            </div>
+          
+
+            <button class="btn-entrar" onclick="logar()">ENTRAR</button>
+              <div id="res"></div>
+
+            <div class="links-auxiliares">
+                <a href="#">Esqueceu sua senha?</a>
+            </div>
+      
+    </div>
+    <script src="/domain.js"></script>
+<script src="/front/login/main.js"></script>
+</body>
+</html>

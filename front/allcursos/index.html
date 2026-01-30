@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New World Cursos - Explore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nw-bg: #f8fafc;
+            --nw-text: #1a2a3a;
+            --nw-accent: #ff6b6b;
+            --nw-grid: rgba(26, 42, 58, 0.06);
+            --nw-card-bg: #ffffff;
+            --nw-card-border: rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--nw-bg);
+            color: var(--nw-text);
+            /* Grade técnica sutil de fundo */
+            background-image: linear-gradient(var(--nw-grid) 1px, transparent 1px),
+                              linear-gradient(90deg, var(--nw-grid) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .course-card {
+            background: var(--nw-card-bg);
+            border: 1px solid var(--nw-card-border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--nw-accent);
+            box-shadow: 0 20px 25px -5px rgba(255, 107, 107, 0.15);
+        }
+
+        .btn-nw {
+            background-color: var(--nw-accent);
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .btn-nw:hover {
+            filter: brightness(1.1);
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+        }
+        #logo{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <nav class="max-w-7xl mx-auto p-6 flex justify-between items-center">
+        <div class="flex items-center">
+            <h1 class="text-2xl font-extrabold tracking-tighter uppercase" id="logo">
+                NEW WORLD <span style="color: var(--nw-accent)">CURSOS</span>
+            </h1>
+        </div>
+
+        <button id="aluno" class="border-2 border-[#1a2a3a] px-6 py-2 rounded-lg text-sm font-bold hover:bg-[#1a2a3a] hover:text-white transition-all">
+            Sessão do Aluno
+        </button>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <header class="mb-16">
+            <h2 class="text-5xl font-extrabold mb-4 tracking-tight leading-tight">
+                Descubra o Universo do <br>
+                <span style="color: var(--nw-accent)">Conhecimento Digital</span>.
+            </h2>
+            <p class="text-lg max-w-2xl text-slate-500 font-medium">
+                Conecte-se a uma plataforma global e explore trilhas interativas com as tecnologias do futuro.
+            </p>
+        </header>
+
+        <div id="course-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+    </main>
+
+    <script src="/domain.js"></script>
+    <script src="main.js"></script>
+       
+</body>
+</html>

@@ -1,0 +1,368 @@
+header{
+    background-color: #1A2A3A;
+    text-align: right;
+    height: 90px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+}
+
+#clicable{
+    width: 100%;
+    background-color: rgba(0, 255, 0, 0);
+    height: 100%;
+    position: absolute;
+    
+
+}
+
+#novo-curso-btn{
+    background-color: green;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 100px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    position: relative;
+}
+#novo-curso-btn:hover{
+    background-color: darkgreen;
+}
+#novo-curso-btn strong{
+    font-size: 40px;
+
+}
+
+
+#cursos-cont{
+    padding: 10px;
+    max-width: 900px;
+    width: 100%;
+    margin: 100px auto 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.cursos{
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    height:230px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.151);
+    background-color: #fff;
+    position: relative;
+    transition: .3s;
+}
+
+.cursos h1{
+    font-size: 15px;
+    text-align: center;
+}
+.cursos p{
+    color: dimgray;
+    font-size: 13px;
+}
+
+.cursos img{
+    width: 100%;
+    height: 120px;
+    margin-top: 15px;
+}
+
+.cursos:hover{
+    scale: 1.01;
+}
+
+#delete{
+    background-color: red;
+    width: 50%;
+    height: 30px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    padding: 3px;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 10px 0 10px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.534);
+    transition: .2s;
+}
+
+#delete:hover{
+    background-color: darkred;
+}
+
+#nova-aula-btn{
+    background-color: #fff;
+    color: #2a2a2a;
+    width: 90%;
+    height: 30px;
+    border: 1px dashed #2a2a2a;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+    
+}
+#nova-aula-btn:hover{
+    background-color: #0378ff1b;
+   
+}
+
+
+#cad-curso-cont{
+    
+    max-width: 500px;
+    margin: auto;
+}
+
+
+
+#cad-curso{
+    
+    max-width: 500px;
+    width: 95%;
+    background-color: #ffffffe4;
+    box-shadow: 1px 1px 15px  rgb(26, 26, 26);
+    padding: 10px;
+    border-radius: 2px;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 1%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 1;
+
+}
+.winOff{
+    scale: 0;
+}
+
+
+
+
+#cad-curso h2{
+    color: #1A2A3A;
+
+}
+
+#cad-curso p{
+    text-align: left;
+    margin:10px 0 0 25px;
+    font-weight: bold;
+    font-size: 10px;
+    color: #fff;
+    color: #1A2A3A;
+}
+#cad-curso input{
+    margin: auto;
+    width: 90%;
+    height: 30px;
+    outline: none;
+     padding-left: 5px;
+     border-radius: 3px;
+     border: 1px solid dimgray;
+}
+
+#cad-curso input::placeholder{
+   
+}
+
+#action-cont{
+    margin: 20px 0 10px 0 ;
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+#action-cont button{
+    width: 40%;
+    height: 40px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#save-curse{
+    background-color: darkgreen;
+
+}
+#save-curse:hover{
+    background-color: green;
+}
+
+#cancel-curse{
+    background-color: darkred;
+}
+
+#cancel-curse:hover{
+    background-color: red;
+}
+
+
+#criar-aula-cont{
+    background-color: red;
+    max-width: 800px;
+    margin: auto;
+    
+}
+
+#criar-aula{
+    border-radius: 5px;
+    max-width: 800px;
+    width: 90%;
+    position: fixed;
+    top: 2%;
+    z-index: 3;
+    padding: 20px;
+    background-color: #fff; 
+    box-shadow: 2px 2px 4px rgb(169, 168, 168);
+
+}
+
+.aulas{
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    border: 1px solid rgb(222, 222, 222);
+    margin-top: 3px;
+    box-shadow: 0px 2px 2px rgb(180, 178, 178);
+    border-radius: 5px;
+    
+    height: 30px;
+    padding: 5px;
+}
+
+.aulas div{
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+
+#aulas-cont{
+    margin: auto;
+    background-color: rgba(214, 214, 214, 0.653);
+    border: 1px solid rgb(216, 216, 216);
+    height: 170px;
+    overflow-y: scroll;
+    padding: 5px;
+    border-radius: 5px;
+    width: 90%;
+}
+
+.aulas-table {
+    font-weight: bold;
+}
+
+.delete-aula{
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+.delete-aula:hover{
+    background-color: darkred;
+}
+
+
+
+#add-aula-cont{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin: 5px auto 0 auto;
+   
+}
+
+#add-aula-cont input{
+    height: 20px;
+    outline: none;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    border: 1px solid #cbcbcb;
+    padding: 5px;
+
+}
+#add-aula-cont p{
+    margin: 13px 0 0 0;
+    font-size: 12px;
+    font-weight: 600;
+}
+#add-aula-cont h2{
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+#add-aula-cont button{
+    width: 40%;
+    height: 35px;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+
+}
+
+#actions-form{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    margin: 5px 0px auto auto;
+}
+
+#save-aula{
+    margin-right: 30px;
+    background-color: darkgreen;
+}
+
+#save-aula:hover{
+    background-color: green;
+}
+
+#cancel-aula{
+    background-color: red;
+   
+}
+#cancel-aula:hover{
+    background-color: darkred;
+   
+}
+@media (max-width:1000px) {
+
+    #novo-curso-btn{
+        margin-right: 10px;
+    }
+}

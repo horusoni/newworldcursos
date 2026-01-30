@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Administrativo</title>
+   
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #1a2a3a 50%, #f4f7f6 50%); /* Azul bem escuro para diferenciar */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            border-top: 5px solid #0d1b2a; /* Faixa superior escura para sinalizar Admin */
+        }
+
+        .admin-badge {
+            background: #e74c3c; /* Vermelho ou cor de destaque para aviso visual */
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #1a2a3a;
+            margin: 0 0 25px 0;
+            font-size: 22px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #1a2a3a;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a2a3a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0d1b2a;
+        }
+
+        .footer-link {
+            margin-top: 15px;
+            display: block;
+            color: #666;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-card">
+    <div class="admin-badge">Acesso Restrito</div>
+    <h2>Painel Administrativo</h2>
+    
+    
+        <div class="input-group">
+            <input type="email" placeholder="E-mail do administrador" required id="email">
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="Senha" required id="senha">
+        </div>
+        <button id="entrar" type="submit">ENTRAR NO SISTEMA</button>
+        
+
+    <a href="/front/index.html" class="footer-link">Voltar para o portal do aluno</a>
+</div>
+
+    <script src="/domain.js"></script>
+  
+    <script src="main.js"></script>
+
+</body>
+</html>

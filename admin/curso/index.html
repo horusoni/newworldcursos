@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos</title>
+     <link rel="stylesheet" href="../component/menu.css">
+     <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="insert-menu"></div>
+
+    <header> 
+        
+        <button id="novo-curso-btn">
+            <div id="clicable"></div>
+            <strong>+</strong> <p>CRIAR UM CURSO</p>
+        </button>
+    </header>
+
+    <main id="cursos-cont">
+
+        <!--
+        <div class="cursos">
+            <button id="delete">Deletar</button>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Cyber.jpg" alt="">
+            </div>
+            <h1>curso de informatica</h1>
+            <p>john max</p>
+            <button id="nova-aula-btn">Adicionar Aulas</button>
+        </div>
+        -->
+
+       
+
+    </main>
+
+    <div id="cad-curso-cont" class="winOff">
+        <div id="cad-curso">
+            <h2>Cadastrar um novo curso</h2>
+            
+            <div class="separators">
+                <p>Titulo</p>
+                <input type="text" placeholder="Ex: Curso de informática" id="titulo">
+                <p>Descrição</p>
+                <input type="text" placeholder="Ex: Aprenda curso" id="desc">
+
+            </div>
+
+             <div class="separators">
+                <p>Matérias</p>
+                <input type="text" placeholder="Ex: Criação e formatação de documentos no Microsoft..." id="materia">
+
+            </div>
+
+            <div class="separators">
+                <p>Tutor</p>
+                <input type="text" placeholder="Ex: Samuel Costa" id="tutor">
+                <p>Carga Horária( em minutos)</p>
+                <input type="number" placeholder="Ex: 90" id="cargaHoraria">
+            </div>
+
+            <div class="separators" >
+
+                <p>link da capa do curso</p>
+                <input type="text" placeholder="Ex: Link da Capa do curso / (thumbnail)" id="capa">
+                <p>Preço do curso</p>
+                <input type="number" placeholder="EX: R$00,00" id="price">
+
+            </div>
+
+         
+
+            <div id="action-cont">
+               <button id="save-curse">SALVAR</button>
+               <button id="cancel-curse">CANCELAR</button>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div id="criar-aula-cont" class="winOff">
+        <div id="criar-aula">
+
+            <div id="aulas-cont">
+                <div class="aulas aulas-table">
+                    <div>
+                        <p>THUMBNAIL</p>
+                    </div>
+                    <div><p>TITULO DA AULA</p></div>
+                    <div><p>VÍDEO</p></div>
+                    <div><p>AÇÃO</p></div>
+                </div>
+
+            </div>
+
+
+            <div id="add-aula-cont">
+                <h2>Cadastrar Aula</h2>
+                <p>Titulo da aula</p>
+                <input id="title-aula" type="text" placeholder="EX: 01. introdução">
+                <p>Descricao da aula</p>
+                <input id="desc-aula" type="text" placeholder="EX: Configuração do ambiente">
+                <p>Capa da aula</p>
+                <input id="thumbnail-aula" type="text" placeholder="EX: https://https://beardiebungalow.com/wp-content/uploads/2023/10/do-they-pee.jpg">
+                <p>Video da aula(video no driver)</p>
+                <input id="videoUrl-aula" type="text" placeholder="URL da aula">
+                
+
+                <div id="actions-form">
+                    <button id="save-aula">SALVAR</button> <button id="cancel-aula">CANCELAR</button>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+   <script src="/domain.js"></script>
+    <script src="../component/auth.js"></script>
+    <script src="../component/menu.js"></script>
+    <script src="main.js"></script>
+    
+</body>
+</html>

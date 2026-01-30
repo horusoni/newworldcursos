@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New World System | Corporate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-light: #f1f5f9;
+            --dark-blue: #0f172a;
+            --accent-red: #ef4444;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            height: 100vh; width: 100%;
+            overflow-x: hidden;
+        }
+
+        .grid {
+            position: fixed; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 1; pointer-events: none;
+        }
+
+        header {
+            position: fixed; top: 0; width: 100%; height: 70px;
+            background: #0d243dcf; display: flex; justify-content: space-between;
+            backdrop-filter: blur(4px);
+            align-items: center; padding: 0 5%; box-sizing: border-box; z-index: 100;
+        }
+
+        .logo { color: #fff; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; font-size: 1rem; }
+        .logo span { color: var(--accent-red); }
+
+        /* CONTAINER PRINCIPAL */
+        .hero-container {
+            display: flex;
+            flex-direction: column-reverse; /* MOBILE: GLOBO EM CIMA (inverte a ordem) */
+            height: 100vh;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* ÁREA DO GLOBO */
+        #canvas-wrap {
+            flex: 1.5; /* Dá mais destaque ao globo no mobile */
+            background: linear-gradient( 45deg, #000006,#3e6795   );
+            position: relative;
+            margin-top: 70px; /* Compensa o header fixo */
+        }
+
+        /* ÁREA DE TEXTO */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 8%;
+            z-index: 10;
+            text-align: center;
+            align-items: center;
+        }
+
+        .label { font-family: 'Fira Code', monospace; color: #64748b; font-size: 0.7rem; margin-bottom: 8px; }
+        h1 { font-size: clamp(1.8rem, 5vw, 3.5rem); color: var(--dark-blue); margin: 0; line-height: 1.1; font-weight: 900; }
+        p { color: #475569; margin: 15px 0 25px; max-width: 500px; line-height: 1.5; font-size: 0.95rem; }
+        
+        .btn-cta {
+            background: #ff5f5f; color: #fff; border: none; padding: 16px 35px;
+            font-weight: 700; border-radius: 4px; cursor: pointer; transition: 0.3s;
+        }
+
+        /* DESKTOP ADJUSTMENTS (min-width: 1024px) */
+        @media (min-width: 1024px) {
+            .hero-container {
+                flex-direction: row; /* Volta ao normal no PC */
+            }
+            #canvas-wrap {
+                flex: 1.2;
+                height: 100vh;
+                margin-top: 0;
+            }
+            .content {
+                flex: 1;
+                text-align: left;
+                align-items: flex-start;
+                padding-top: 0;
+            }
+            .canvas-label { top: 100px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid"></div>
+
+    <header>
+        <div class="logo">NEW WORLD<span> CURSOS </span></div>
+        <button id="aluno" style="background:transparent; color:#fff; border:1px solid #fff; padding:8px 15px; border-radius:4px; cursor:pointer; font-size:0.7rem; font-weight:600; width: 200px; border: 2px solid #fff; font-size: 17px;">Sessão do Aluno</button>
+    </header>
+
+    <div class="hero-container">
+        <main class="content">
+            <div class="label"></div>
+            <h1>Descubra o Universo do Conhecimento Digital.</h1>
+            <p>Conecte-se a uma plataforma global e explore trilhas interativas com as tecnologias do futuro.</p>
+           
+            <button class="btn-cta">Explorar Cursos</button>
+        </main>
+
+        <div id="canvas-wrap">
+            <div class="label canvas-label" style="position:absolute; top:20px; left:8%; z-index:20; color: #475569;"></div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.158.0/three.min.js"></script>
+
+    <script>
+        let scene, camera, renderer, globeGroup;
+
+        document.addEventListener("click",(e)=>{
+            if(e.target.id==="aluno"){
+                location.href='/front/login'
+            }
+            if(e.target.classList[0]==="btn-cta"){
+                location.href='/front/allcursos'
+            }
+
+           
+        })
+
+
+        function init() {
+            const container = document.getElementById('canvas-wrap');
+            scene = new THREE.Scene();
+            
+            camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 1, 1000);
+            
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            globeGroup = new THREE.Group();
+            scene.add(globeGroup);
+
+            // GLOBO
+            const geo = new THREE.SphereGeometry(95, 60, 60);
+            const mat = new THREE.PointsMaterial({
+                color: 0xffffff, size: 0.6, transparent: true, opacity: 0.6 
+            });
+            const points = new THREE.Points(geo, mat);
+            globeGroup.add(points);
+
+            // NW VERMELHO
+            const canvasNW = document.createElement('canvas');
+            const ctx = canvasNW.getContext('2d');
+            canvasNW.width = 256; canvasNW.height = 256;
+            ctx.font = 'bold 110px Inter';
+            ctx.fillStyle = '#EF4444';
+            ctx.textAlign = 'center';
+            ctx.fillText('NW', 128, 150);
+
+            const texture = new THREE.CanvasTexture(canvasNW);
+            const spriteMat = new THREE.SpriteMaterial({ map: texture, transparent: true });
+            const sprite = new THREE.Sprite(spriteMat);
+            sprite.scale.set(70, 70, 1);
+            globeGroup.add(sprite);
+
+            // ANEL
+            const ringGeo = new THREE.TorusGeometry(130, 0.2, 16, 100);
+            const ringMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.15 });
+            const ring = new THREE.Mesh(ringGeo, ringMat);
+            ring.rotation.x = Math.PI / 2.3;
+            globeGroup.add(ring);
+
+            animate();
+            onResize();
+            window.addEventListener('resize', onResize);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            globeGroup.rotation.y += 0.003;
+            renderer.render(scene, camera);
+        }
+
+        function onResize() {
+            const container = document.getElementById('canvas-wrap');
+            const w = container.clientWidth;
+            const h = container.clientHeight;
+
+            camera.aspect = w / h;
+            
+            if (window.innerWidth >= 1024) {
+                camera.position.z = 240;
+            } else {
+                camera.position.z = 320; // Ajusta o zoom para o mobile
+            }
+
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h);
+        }
+
+        init();
+    </script>
+</body>
+</html>
