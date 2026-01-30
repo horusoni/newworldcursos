@@ -1,9 +1,15 @@
 {
   "version": 2,
   "builds": [
-    { "src": "/**", "use": "@vercel/static" }
+    { "src": "assets/**", "use": "@vercel/static" },
+    { "src": "front/**", "use": "@vercel/static" },
+    { "src": "admin/**", "use": "@vercel/static" },
+    { "src": "index.html", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "front/$1" }
+    { "src": "/assets/(.*)", "dest": "assets/$1" },
+    { "src": "/front/(.*)", "dest": "front/$1" },
+    { "src": "/admin/(.*)", "dest": "admin/$1" },
+    { "src": "/", "dest": "index.html" }
   ]
 }
