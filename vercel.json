@@ -1,7 +1,7 @@
 {
   "version": 2,
   "builds": [
-    { "src": "front/**", "use": "@vercel/static" }
+    { "src": "/**", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/(.*)", "dest": "front/$1" }
