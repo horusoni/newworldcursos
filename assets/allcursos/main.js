@@ -7,7 +7,7 @@ document.addEventListener("click",(e)=>{
     }
 
     if(e.target.id === "logo"){
-        location.href="/front/" 
+        location.href="/" 
     }
 })
 
