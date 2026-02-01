@@ -24,6 +24,7 @@ async function logar(){
   }
   
   setTimeout(() => {
+    alert(1)
     location.href = "/front/painel/home";
   }, 100);
 
