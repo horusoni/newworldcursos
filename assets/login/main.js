@@ -18,10 +18,11 @@ async function logar(){
 
     let result = await autenticar(emailValue,senhaValue)
    
-   if (!result.login) {
-    res.innerHTML = result.message;
+  if (!result.login) {
+  res.innerHTML = result.message;
     return;
   }
+  
   setTimeout(() => {
     location.href = "/front/painel/home";
   }, 100);
