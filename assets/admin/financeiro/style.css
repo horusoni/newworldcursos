@@ -1,0 +1,83 @@
+header{
+    background-color: #1A2A3A;
+    height: 90px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: end;
+}
+
+#search-cont{
+    display: flex;
+    margin: 20px auto 0 auto;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 30px;
+    justify-content: center;
+    max-width: 900px;
+    width: 100%;
+
+}
+
+#search-cont input{
+    width: 90%;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 17px;
+}
+
+
+header h1{
+    font-size: 17px;
+    margin-right: 20px;
+}
+
+main{
+    
+    margin: 5px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.295);
+    border-radius: 3px;
+    background-color: #fff;
+    padding: 5px;
+}
+
+#total{
+    color: #006dda;
+   
+    max-width: 900px;
+    width: 100%;
+    margin: 20px auto 0 auto;
+    text-align: right;
+}
+main h1{
+    text-align: right;
+    font-size: 19px;
+    margin: 20px;
+    
+}
+
+.ref-aluno{
+  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ref-aluno div{
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.corsim{
+    background-color: #1A2A3A;
+    color: #fff;
+}

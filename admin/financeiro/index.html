@@ -12,10 +12,48 @@
 <body>
     <div id="insert-menu"></div>
     
+    <header><h1>Financeiro</h1></header>
+
+     <section id="search-cont"> 
+        <input type="text" name="" id="search" placeholder="Buscar por Aluno, Curso, Data ou Valor"> <img src="https://img.icons8.com/?size=100&id=82712&format=png&color=1a2a3a" alt=""
+        width="40px">
+    </section>
+
+      <h1 id="total">TOTAL R$<strong id="vtotal">00,00</strong></h1>
+
+    <main id="list-cont">
+        <div class="ref-aluno corsim">
+            <div>ALUNO</div> <div>CURSO</div> <div>DATA</div> <div>VALOR</div>
+        </div>
+         
+
+    </main>
+
 
     <script src="/assets/domain.js"></script>
     <script src="/assets/component/auth.js"></script>
     <script src="/assets/component/menu.js"></script>
+    <script src="/assets/admin/financeiro/main.js"></script>
+
+<script>
+const searchInput = document.querySelector("#search");
+const listCont = document.querySelector("#list-cont");
+
+searchInput.addEventListener("keyup", () => {
+    const termo = searchInput.value.toLowerCase();
+    const alunos = listCont.querySelectorAll(".ref-aluno");
+
+    alunos.forEach(aluno => {
+        const texto = aluno.innerText.toLowerCase();
+        if (texto.includes(termo)) {
+            aluno.style.display = "";
+        } else {
+            aluno.style.display = "none";
+        }
+    });
+});
+</script>
+
     
 </body>
 </html>

@@ -13,13 +13,16 @@ document.addEventListener("keydown",(e)=>{
 })
 
 async function logar(){
+    res.innerHTML = "<span class='loader'></span>"
+
+
     let emailValue = email.value
     let senhaValue = senha.value
 
     let result = await autenticar(emailValue,senhaValue)
    
   if (!result.login) {
-  res.innerHTML = result.message;
+    res.innerHTML = result.message;
     return;
   }
   

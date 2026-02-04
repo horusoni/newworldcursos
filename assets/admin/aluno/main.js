@@ -1,7 +1,6 @@
 (async ()=>{
     let alunos = await buscarAlunos()
     let aluno = alunos.alunos
-    console.log(aluno)
    
     for(let i = 0 ; i < aluno.length ; i++){
         
@@ -9,31 +8,50 @@
             <div class="alunos-list">
             <div>${aluno[i].nome}</div>
             <div>${aluno[i].email}</div>
-            <div> <button id="${aluno[i]._id}" class="curso-user">CURSOS</button> <button id="${aluno[i]._id}" class="delete-user">DELETAR</button> </div>
+            <div>
+                <button id="${aluno[i]._id}" class="curso-user">CURSOS</button> 
+                <button id="${aluno[i]._id}" class="edit-user">Editar</button>
+                <button id="${aluno[i]._id}" class="delete-user">DELETAR</button>
+             </div>
         </div>
         `
     }
-    
 })()
-
 
 document.addEventListener("click",(e)=>{
     if(e.target.id === "add-aluno"){
         document.querySelector("#cad-aluno").classList.remove("hidden")
+        document.querySelector("#cadastrar").classList = "cadastrar"
+        document.querySelector("#title-cad").textContent = "Cadastrar aluno"
     }
+
     if(e.target.id === "cancelar"){
         document.querySelector("#cad-aluno").classList.add("hidden")
     }
-    if(e.target.id === "cadastrar"){
+    if(e.target.classList[0] === "cadastrar"){
         enviarCadastro()
     }
     if(e.target.classList[0] === "delete-user"){
-         let userId = e.target.id
+        let userId = e.target.id
 
         let randomNum = Math.floor(Math.random() * 999) + 1000
         let askDel = prompt("Para confirmar a exclusão deste curso digite: "+randomNum)
 
         askDel === randomNum.toString() ? deletarAluno(userId) : alert("Os digitos não coincidem.")   
+    }
+
+    if(e.target.classList[0] === "edit-btn"){
+        let userId = e.target.classList[1]
+        atualizarCadastro(userId)
+    }
+
+    if(e.target.classList[0] === "edit-user"){
+        let userId = e.target.id
+        
+        document.querySelector("#cad-aluno").classList.remove("hidden")
+        document.querySelector("#cadastrar").classList = "edit-btn"
+        document.querySelector("#title-cad").textContent = "Editar aluno"
+        document.querySelector("#cadastrar").classList.add(userId)
     }
 
     if(e.target.classList[0] === "curso-user"){
@@ -96,6 +114,7 @@ function enviarCadastro(){
     sendCad(cadastro)
     
 }
+
 
 function tratarCadastro (cadastro){
     if(cadastro.nome.length < 10) {return {msg:"Nome muito pequeno"}}
@@ -290,4 +309,41 @@ async function desvincular(inscId) {
     }
 
     
+}
+
+
+function atualizarCadastro(userId){
+    let nome = document.querySelector("#nome")
+    let email = document.querySelector("#email")
+    let senha = document.querySelector("#senha")
+
+    let cadastro = {
+        userId:userId,
+        nome: nome.value,
+        email: email.value,
+        senha: senha.value
+    }
+    let msg = tratarCadastro(cadastro) 
+    if(!msg.send){return alert(msg.msg)}
+    sendUpdate(cadastro)
+    
+    location.reload()
+    
+}
+
+async function sendUpdate(dados){
+    const response = await fetch(domain+"/edit-user",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            dados
+        })
+    })
+
+    if(!response.ok){return}
+    const data = await response.json()
+    alert("Usuário atualizado com sucesso!")
+    return data
 }

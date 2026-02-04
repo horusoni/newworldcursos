@@ -5,6 +5,7 @@
     for(let i = 0 ; i < cursos.length ; i++){
         document.querySelector("#cursos-cont").innerHTML += `
         <div class="cursos">
+            <button id="edit" class="edit-${cursos[i]._id}">Editar</button>
             <button id="delete" class="del-${cursos[i]._id}">Deletar</button>
             <div>
                 <img src="${cursos[i].capa}" alt="">
@@ -22,6 +23,23 @@ document.addEventListener("click",(e)=>{
     if(e.target.id==="clicable"){
         console.log(e.target.id)
         document.querySelector("#cad-curso-cont").classList.remove("winOff")
+        document.querySelector("#save-curse").classList = "save-curse"
+        document.querySelector("#cad-title").textContent = "Cadastrar curso"
+    }
+    if(e.target.id ==="edit"){
+        let cursoId = e.target.classList[0].replace("edit-","")
+        document.querySelector("#cad-curso-cont").classList.remove("winOff")
+        document.querySelector("#save-curse").classList = "save-edit"
+        document.querySelector("#save-curse").classList.add(cursoId) 
+        document.querySelector("#cad-title").textContent = "Editar curso"
+        
+    }
+
+    if(e.target.classList[0] === "save-edit"){
+        let cursoId = e.target.classList[1]
+         
+        editarCurso(cursoId)
+        
     }
 
     if(e.target.id === "cancel-curse"){
@@ -37,7 +55,7 @@ document.addEventListener("click",(e)=>{
         askDel === randomNum.toString() ? deletarCurso(delId) : alert("Os digitos não coincidem.")      
     }
 
-    if(e.target.id ==="save-curse"){
+    if(e.target.classList[0] ==="save-curse"){
         cadastrarCurso()
     }
 
@@ -163,6 +181,51 @@ async function cadastrarCurso(){
    }
 }
 
+async function editarCurso(cursoId){
+    let titulo = document.querySelector("#titulo");
+    let desc = document.querySelector("#desc");
+    let tutor = document.querySelector("#tutor");
+    let capa = document.querySelector("#capa")
+    let price = document.querySelector("#price")
+    let materia = document.querySelector("#materia")
+    let carga_horaria = document.querySelector("#cargaHoraria")
+
+    let curso = {
+        cursoId,cursoId,
+        titulo: titulo.value,
+        desc: desc.value,
+        materia:materia.value,
+        tutor: tutor.value,
+        capa: capa.value,
+        preco: price.value,
+        carga_horaria: carga_horaria.value,
+    }
+    
+
+    console.log(curso)
+   
+    let verify = formatData(curso)
+    if(!verify){return alert("PREENCHA TODOS OS DADOS.")}
+   
+    const response = await fetch(domain+"/editar-curso",{
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json"
+        },
+        credentials:"include",
+        body:JSON.stringify({
+            curso:curso
+        })
+    })
+    
+    const dados = await response.json()
+    console.log(dados)
+    alert(dados.message)
+    location.reload();
+    return dados;
+   
+}
+
 function formatData(data) {
 
     try {
@@ -265,7 +328,6 @@ async function listarAulas(data){
                 </div>
         `
     }
-
 }
 
 async function deletarAula(id){

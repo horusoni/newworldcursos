@@ -67,6 +67,8 @@ main{
     cursor: pointer;
     color: #fff;
     font-weight: bold;
+    border-radius: 2px;
+    transition: .3s;
 }
 
 
@@ -76,12 +78,18 @@ main{
 .delete-user{
     background-color: red;
 }
+.edit-user{
+    background-color: green;
+}
 
 .curso-user:hover{
     background-color: #103458;
 }
 .delete-user:hover{
     background-color: rgb(121, 10, 10);
+}
+.edit-user:hover{
+    background-color: darkgreen;
 }
 
 

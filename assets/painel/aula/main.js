@@ -35,9 +35,19 @@ document.addEventListener("click",async (e) => {
     isCheck = verificarCheck()
   }
   if(e.target.classList[0] === "certificado-on"){
+      e.target.innerHTML = "<span class='loader'></span>"
+   
     if(isCheck){
-        sendCheck()
+      setTimeout(()=>{
+        e.target.innerHTML = "EMITIR CERTIFICADO"
+        sendCheck() 
+      },4000)
+
+        
+        
       }
+
+
   }
 
   const btn = e.target.closest(".view-btn");

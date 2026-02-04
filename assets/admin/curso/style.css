@@ -91,7 +91,7 @@ header{
 
 #delete{
     background-color: red;
-    width: 50%;
+    width: 40%;
     height: 30px;
     cursor: pointer;
     color: #fff;
@@ -121,6 +121,30 @@ header{
     transition: .3s;
     
 }
+
+#edit{
+    background-color: green;
+    width: 40%;
+    height: 30px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    padding: 3px;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px 0 10px 0;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.534);
+    transition: .2s;
+
+}
+
+#edit:hover{
+    background-color: darkgreen;
+}
+
+
 #nova-aula-btn:hover{
     background-color: #0378ff1b;
    
@@ -182,9 +206,6 @@ header{
      border: 1px solid dimgray;
 }
 
-#cad-curso input::placeholder{
-   
-}
 
 #action-cont{
     margin: 20px 0 10px 0 ;

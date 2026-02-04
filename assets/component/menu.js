@@ -96,7 +96,7 @@ document.addEventListener("click",(e)=>{
  
     if(e.target.classList[1] === "clickCurso"){ location.href = "/admin/curso/"}
     if(e.target.classList[1] === "clickAluno"){ location.href = "/admin/aluno/"} 
-    if(e.target.classList[1] === "clickCoin"){ alert("Em desenvolvimento")}
+    if(e.target.classList[1] === "clickCoin"){ location.href = "/admin/financeiro/"}
     if(e.target.classList[1] === "clicksair"){ await logout() }
 
  }

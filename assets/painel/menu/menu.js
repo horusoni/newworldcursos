@@ -1,19 +1,20 @@
 //const host = "http://192.168.100.12:5500"
 
 (async ()=>{
-    let nome = await pushName()
-    console.log(nome)
-    let firstName = nome.split(" ")[0]
-   
     document.querySelector("#header-aluno").innerHTML+=`
      <div id="hi-cont">
             <h2>Ambiente Virtual do Aluno</h2>
             <div>
-                <strong>${firstName} </strong>
+                <strong id="aluno-name"></strong>
                 <img src="https://img.icons8.com/?size=100&id=7819&format=png&color=FFFFFF"/>
             </div>
         </div>`
 
+        let nome = await pushName()
+        console.log(nome)
+        let firstName = nome.split(" ")[0]
+
+        document.querySelector("#aluno-name").innerText = firstName
 })()    
 
 
